@@ -66,8 +66,8 @@ def get_all_translations(rna_sequence, genetic_code):
     pass
 
 def get_reverse(sequence):
-    fuckme = sequence[::-1]
-    return fuckme.upper()
+    revseq = sequence[::-1]
+    return revseq.upper()
     """Reverse orientation of `sequence`.
 
     Returns a string with `sequence` in the reverse order.
