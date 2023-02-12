@@ -2,10 +2,8 @@
 
 import sys
 
-"""def translate_sequence(rna_sequence, genetic_code):
-    transseq = genetic_code[rna_sequence]
-    return transseq
-    Translates a sequence of RNA into a sequence of amino acids.
+def translate_sequence(rna_sequence, genetic_code):
+    """Translates a sequence of RNA into a sequence of amino acids.
 
     Translates `rna_sequence` into string of amino acids, according to the
     `genetic_code` given as a dict. Translation begins at the first position of
@@ -25,14 +23,17 @@ import sys
         amino acids (string of single-letter amino acid abbreviation). Stop
         codons should be represented with asterisks ('*').
 
-    Returns
+    fuckme = sequence[::-1]
+    return fuckme.upper()
+Returns
     -------
     str
         A string of the translated amino acids.
     """
-    
-"""def get_all_translations(rna_sequence, genetic_code):
-    Get a list of all amino acid sequences encoded by an RNA sequence.
+    pass
+
+def get_all_translations(rna_sequence, genetic_code):
+    """Get a list of all amino acid sequences encoded by an RNA sequence.
 
     All three reading frames of `rna_sequence` are scanned from 'left' to
     'right', and the generation of a sequence of amino acids is started
@@ -62,7 +63,7 @@ import sys
         A list of strings; each string is an sequence of amino acids encoded by
         `rna_sequence`.
     """
-    
+    pass
 
 def get_reverse(sequence):
     fuckme = sequence[::-1]
@@ -73,7 +74,7 @@ def get_reverse(sequence):
 
     If `sequence` is empty, an empty string is returned.
 
-    Example
+    Examples
     --------
     >>> get_reverse('AUGC')
     'CGUA'
@@ -81,25 +82,27 @@ def get_reverse(sequence):
     pass
 
 def get_complement(sequence):
-    compdict = { "A" : "U", "U" : "A", "C" : "G", "G" : "C" }
-    for key, value in compdict:
-        compseq = sequence.replace(key, value)
+    sequence = sequence.replace("A", "u").replace(
+            "C", "g").replace("U", "a").replace("G", "c")
+    sequence = sequence.upper()
     return sequence
     """Get the complement of a `sequence` of nucleotides.
 
     Returns a string with the complementary sequence of `sequence`.
 
-    If `sequence` is empty, an empty string is returned
+    If `sequence` is empty, an empty string is returned.
+
     Examples
     --------
     >>> get_complement('AUGC')
     'UACG'
     """
-    
+    pass
 
-"""def reverse_and_complement(sequence):
-    return compseq[::-1]
-    Get the reversed and complemented form of a `sequence` of nucleotides.
+def reverse_and_complement(sequence):
+    seq =seq[::-1]
+    return seq.upper()
+    """Get the reversed and complemented form of a `sequence` of nucleotides.
 
     Returns a string that is the reversed and complemented sequence
     of `sequence`.
@@ -111,10 +114,10 @@ def get_complement(sequence):
     >>> reverse_and_complement('AUGC')
     'GCAU'
     """
-    
+    pass
 
-"""def get_longest_peptide(rna_sequence, genetic_code):
-    Get the longest peptide encoded by an RNA sequence.
+def get_longest_peptide(rna_sequence, genetic_code):
+    """Get the longest peptide encoded by an RNA sequence.
 
     Explore six reading frames of `rna_sequence` (the three reading frames of
     `rna_sequence`, and the three reading frames of the reverse and complement
@@ -140,7 +143,7 @@ def get_complement(sequence):
         A string of the longest sequence of amino acids encoded by
         `rna_sequence`.
     """
-    
+    pass
 
 
 if __name__ == '__main__':
