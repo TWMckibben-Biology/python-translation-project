@@ -3,7 +3,10 @@
 import sys
 
 def translate_sequence(rna_sequence, genetic_code):
-    """Translates a sequence of RNA into a sequence of amino acids.
+    for key, value in genetic_code.items():
+        transeq = genetic_code[rna_sequence]
+        return transeq
+"""Translates a sequence of RNA into a sequence of amino acids.
 
     Translates `rna_sequence` into string of amino acids, according to the
     `genetic_code` given as a dict. Translation begins at the first position of
@@ -23,14 +26,11 @@ def translate_sequence(rna_sequence, genetic_code):
         amino acids (string of single-letter amino acid abbreviation). Stop
         codons should be represented with asterisks ('*').
 
-    fuckme = sequence[::-1]
-    return fuckme.upper()
-Returns
+    Returns
     -------
     str
         A string of the translated amino acids.
     """
-    pass
 
 def get_all_translations(rna_sequence, genetic_code):
     """Get a list of all amino acid sequences encoded by an RNA sequence.
@@ -79,7 +79,7 @@ def get_reverse(sequence):
     >>> get_reverse('AUGC')
     'CGUA'
     """
-    pass
+    
 
 def get_complement(sequence):
     sequence = sequence.replace("A", "u").replace(
@@ -97,7 +97,7 @@ def get_complement(sequence):
     >>> get_complement('AUGC')
     'UACG'
     """
-    pass
+    
 
 def reverse_and_complement(sequence):
     seq =seq[::-1]
@@ -114,7 +114,7 @@ def reverse_and_complement(sequence):
     >>> reverse_and_complement('AUGC')
     'GCAU'
     """
-    pass
+    
 
 def get_longest_peptide(rna_sequence, genetic_code):
     """Get the longest peptide encoded by an RNA sequence.
@@ -165,12 +165,10 @@ if __name__ == '__main__':
             "AGU"
             "ACA"
             "GCG")
-    longest_peptide = get_longest_peptide(rna_sequence = rna_seq,
+longest_peptide = get_longest_peptide(rna_sequence = rna_seq,
             genetic_code = genetic_code)
-    assert isinstance(longest_peptide, str), "Oops: the longest peptide is {0}, not a string".format(longest_peptide)
-    message = "The longest peptide encoded by\n\t'{0}'\nis\n\t'{1}'\n".format(
-            rna_seq,
-            longest_peptide)
-    sys.stdout.write(message)
-    if longest_peptide == "MYWHATAPYTHQNISTA":
-        sys.stdout.write("Indeed.\n")
+assert isinstance(longest_peptide, str), "Oops: the longest peptide is {0}, not a string".format(longest_peptide)
+message = "The longest peptide encoded by\n\t'{0}'\nis\n\t'{1}'\n".format(rna_seq, longest_peptide)
+sys.stdout.write(message)
+if longest_peptide == "MYWHATAPYTHQNISTA":
+    sys.stdout.write("Indeed.\n")
